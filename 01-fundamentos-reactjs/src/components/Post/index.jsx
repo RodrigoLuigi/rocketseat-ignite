@@ -1,18 +1,26 @@
-import { format, formatDistanceToNow } from 'date-fns'
+import { useState } from 'react'
+import PropTypes from 'prop-types'
 import { ptBR } from 'date-fns/locale'
+import { format, formatDistanceToNow } from 'date-fns'
 
 import { Avatar } from '../Avatar'
 import { Comment } from '../Comment'
 
 import styles from './Post.module.css'
 
-import PropTypes from 'prop-types'
-import { useState } from 'react'
-
 Post.propTypes = {
-	author: PropTypes.object.isRequired,
-	content: PropTypes.array.isRequired,
-	publishedAt: PropTypes.instanceOf(Date)
+	author: PropTypes.shape({
+		avatarUrl: PropTypes.string.isRequired,
+		name: PropTypes.string.isRequired,
+		role: PropTypes.string.isRequired
+	}),
+	content: PropTypes.arrayOf(
+		PropTypes.shape({
+			type: PropTypes.string.isRequired,
+			content: PropTypes.string.isRequired
+		}).isRequired
+	),
+	publishedAt: PropTypes.instanceOf(Date).isRequired
 }
 
 export function Post({ author, publishedAt, content }) {

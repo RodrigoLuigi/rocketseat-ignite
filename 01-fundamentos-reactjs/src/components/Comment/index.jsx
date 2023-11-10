@@ -1,9 +1,10 @@
-import styles from './Comment.module.css'
 import PropTypes from 'prop-types'
+import styles from './Comment.module.css'
 
 import { Avatar } from '../Avatar'
 
 import { ThumbsUp, Trash } from 'phosphor-react'
+
 import { useState } from 'react'
 
 Comment.propTypes = {
