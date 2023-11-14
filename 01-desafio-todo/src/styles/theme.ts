@@ -1,5 +1,6 @@
 export default {
 	COLORS: {
+		BLUE_DARK_TRANSPARENT: '#1e709f35',
 		BLUE_DARK: '#1E6F9F',
 		BLUE: '#4EA8DE',
 		PURPLE_DARK: '#5E60CE',

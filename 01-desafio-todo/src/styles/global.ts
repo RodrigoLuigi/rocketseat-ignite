@@ -40,11 +40,11 @@ export default createGlobalStyle`
     transition: filter 0.2s;
   }
 
-  button:hover, a:hover {
+ /*  button:hover, a:hover {
     filter: brightness(0.9);
-  }
+  }*/
 
   button:active, a:active {
     transform: scale(0.97);
-  }
+  } 
 `
