@@ -96,21 +96,24 @@ export const Container = styled.li`
 	.checkbox input:checked + .checkmark:after {
 		display: block;
 		opacity: 1;
+
 		transition: all 0.4s ease-in-out;
 	}
 
 	.checkbox:has(> input:checked) + p {
 		color: var(--Gray-300, #808080);
-		text-decoration: line-through;
-		transition: all 0.4s ease-in-out;
+		text-decoration: line-through #808080;
+
+		transition: all 0.4s ease-in-out, text-decoration-color 0.4s;
 	}
 
 	> p {
 		color: ${({ theme }) => theme.COLORS.GRAY_100};
 		font-size: 1.4rem;
 		line-height: 19.6px;
-		text-decoration: none;
-		transition: all 0.4s ease-in-out;
+		text-decoration: line-through transparent;
+
+		transition: all 0.4s ease-in-out, text-decoration-color 0.4s;
 	}
 
 	> button {
@@ -125,7 +128,7 @@ export const Container = styled.li`
 
 		border-radius: 4px;
 		border: none;
-		transition: 0.1s background-color;
+		transition: background-color 0.1s;
 
 		svg {
 			color: ${({ theme }) => theme.COLORS.GRAY_300};

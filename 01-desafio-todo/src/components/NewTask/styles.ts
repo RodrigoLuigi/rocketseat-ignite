@@ -8,6 +8,7 @@ export const Container = styled.div`
 		padding: 1.6rem;
 		background: ${({ theme }) => theme.COLORS.GRAY_500};
 		color: ${({ theme }) => theme.COLORS.GRAY_100};
+		cursor: pointer;
 
 		border: 1px solid ${({ theme }) => theme.COLORS.GRAY_700};
 		border-radius: 8px;

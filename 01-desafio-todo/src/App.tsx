@@ -15,15 +15,18 @@ import {
 const tasks = [
 	{
 		id: 1,
-		description: 'Integer urna interdum massa libero auctor neque turpis .'
+		description: 'Integer urna interdum massa libero auctor neque turpis .',
+		status: true
 	},
 	{
 		id: 2,
-		description: 'Integer urna interdum massa libero auctor neque turpis .'
+		description: 'Integer urna interdum massa libero auctor neque turpis .',
+		status: false
 	},
 	{
 		id: 3,
-		description: 'Integer urna interdum massa libero auctor neque turpis .'
+		description: 'Integer urna interdum massa libero auctor neque turpis .',
+		status: false
 	}
 ]
 
