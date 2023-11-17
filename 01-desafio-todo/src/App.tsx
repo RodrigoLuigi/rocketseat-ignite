@@ -21,7 +21,7 @@ export function App() {
 	const countTrueStatus = tasks.filter((obj) => obj.status === true).length
 
 	function handleNewTask(data: TaskTypes) {
-		setTasks([...tasks, data])
+		setTasks((prevState) => [...prevState, data])
 
 		localStorage.setItem('@tasks', JSON.stringify([...tasks, data]))
 	}
