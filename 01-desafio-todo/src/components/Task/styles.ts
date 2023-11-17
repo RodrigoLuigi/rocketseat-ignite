@@ -108,6 +108,7 @@ export const Container = styled.li`
 	}
 
 	> p {
+		width: 100%;
 		color: ${({ theme }) => theme.COLORS.GRAY_100};
 		font-size: 1.4rem;
 		line-height: 19.6px;

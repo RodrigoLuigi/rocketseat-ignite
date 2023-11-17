@@ -76,6 +76,7 @@ export const TaskListContent = styled.div<TaskListContentProps>`
 `
 
 export const TaskList = styled.ul`
+	width: 100%;
 	list-style: none;
 	display: flex;
 	flex-direction: column;
