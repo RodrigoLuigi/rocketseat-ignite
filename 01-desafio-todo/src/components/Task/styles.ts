@@ -9,9 +9,14 @@ export const Container = styled.li`
 
 	border-radius: 8px;
 	border: 1px solid ${({ theme }) => theme.COLORS.GRAY_400};
+	transition: border-color 0.4s ease;
 
 	background: ${({ theme }) => theme.COLORS.GRAY_500};
 	box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
+
+	&:has(:checked) {
+		border-color: transparent;
+	}
 
 	.checkbox {
 		display: flex;
