@@ -1,3 +1,5 @@
+import { produce } from 'immer'
+
 import { ActionTypes } from './actions'
 
 export interface Cycle {
@@ -18,14 +20,19 @@ interface CyclesState {
 export function cyclesReducer(prevState: CyclesState, action: any) {
   switch (action.type) {
     case ActionTypes.ADD_NEW_CYCLE:
-      return {
+      /*  return {
         ...prevState,
         cycles: [...prevState.cycles, action.payload.newCycle],
         activeCycleId: action.payload.newCycle.id,
-      }
+      } */
 
-    case ActionTypes.INTERRUPT_CURRENT_CYCLE:
-      return {
+      return produce(prevState, (draft) => {
+        draft.cycles.push(action.payload.newCycle)
+        draft.activeCycleId = action.payload.newCycle.id
+      })
+
+    case ActionTypes.INTERRUPT_CURRENT_CYCLE: {
+      /*  return {
         ...prevState,
         cycles: prevState.cycles.map((cycle) => {
           if (cycle.id === prevState.activeCycleId) {
@@ -38,10 +45,24 @@ export function cyclesReducer(prevState: CyclesState, action: any) {
           }
         }),
         activeCycleId: null,
+      } */
+
+      const currentCycleIndex = prevState.cycles.findIndex((cycle) => {
+        return cycle.id === prevState.activeCycleId
+      })
+
+      if (currentCycleIndex < 0) {
+        return prevState
       }
 
-    case ActionTypes.MARK_CURRENT_CYCLE_AS_FINISHED:
-      return {
+      return produce(prevState, (draft) => {
+        draft.activeCycleId = null
+        draft.cycles[currentCycleIndex].interruptedDate = new Date()
+      })
+    }
+
+    case ActionTypes.MARK_CURRENT_CYCLE_AS_FINISHED: {
+      /*  return {
         ...prevState,
         cycles: prevState.cycles.map((cycle) => {
           if (cycle.id === prevState.activeCycleId) {
@@ -51,7 +72,20 @@ export function cyclesReducer(prevState: CyclesState, action: any) {
           }
         }),
         activeCycleId: null,
+      } */
+      const currentCycleIndex = prevState.cycles.findIndex((cycle) => {
+        return cycle.id === prevState.activeCycleId
+      })
+
+      if (currentCycleIndex < 0) {
+        return prevState
       }
+
+      return produce(prevState, (draft) => {
+        draft.activeCycleId = null
+        draft.cycles[currentCycleIndex].finishedDate = new Date()
+      })
+    }
 
     default:
       return prevState
