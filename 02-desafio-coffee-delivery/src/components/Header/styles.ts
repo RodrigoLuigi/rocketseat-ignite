@@ -32,10 +32,17 @@ export const Actions = styled.div`
     border-radius: 6px;
 
     background-color: ${(props) => props.theme['purple-light']};
-    color: ${(props) => props.theme['purple-dark']};
 
     svg {
       color: ${(props) => props.theme['purple-medium']};
+    }
+
+    span {
+      color: ${(props) => props.theme['purple-dark']};
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 130%;
     }
   }
 

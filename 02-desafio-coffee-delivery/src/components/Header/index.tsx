@@ -10,14 +10,14 @@ export function Header() {
         <img src={logoCoffeeDelivery} alt="Logo Coffee Delivery" />
 
         <Actions>
-          <div className="location">
+          <a href="#" className="location">
             <MapPin size={22} weight="fill" />
             <span>Porto Alegre, Rs</span>
-          </div>
+          </a>
 
-          <div className="cart">
+          <a href="#" className="cart">
             <ShoppingCart size={22} weight="fill" />
-          </div>
+          </a>
         </Actions>
       </Content>
     </HeaderContainer>
