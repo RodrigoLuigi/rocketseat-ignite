@@ -6,4 +6,6 @@
 
  npm i @types/styled-components
 
+ npm i phosphor-react
+
 
