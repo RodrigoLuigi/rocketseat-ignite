@@ -1,58 +1,18 @@
 import styled from 'styled-components'
 
 export const CoffeeCardContainer = styled.article`
-  background: ${(props) => props.theme['base-card']};
-  border-radius: 6px 36px;
+  width: 256px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  width: 256px;
-  //height: 310px;
+  background: ${(props) => props.theme['base-card']};
 
+  border-radius: 6px 36px;
   padding: 0 20px 20px;
 
-  .coffee-image {
-    display: flex;
-    width: 120px;
-    height: 120px;
-    justify-content: center;
-    align-items: center;
-
-    margin-top: -20px;
-
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-  .coffee-tags {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
-
-    span {
-      display: flex;
-      padding: 4px 8px;
-      justify-content: center;
-      align-items: center;
-      background-color: ${(props) => props.theme['yellow-light']};
-
-      color: ${(props) => props.theme['yellow-dark']};
-      font-family: 'Roboto', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
-      line-height: 130%;
-      text-transform: uppercase;
-
-      margin-top: 12px;
-      margin-bottom: 16px;
-    }
-  }
-
-  h3 {
+  .coffee-card-title {
     color: ${(props) => props.theme['base-subtitle']};
     text-align: center;
     font-family: 'Baloo 2', sans-serif;
@@ -63,7 +23,7 @@ export const CoffeeCardContainer = styled.article`
     margin-bottom: 8px;
   }
 
-  p {
+  .coffee-card-description {
     color: ${(props) => props.theme['base-label']};
 
     text-align: center;
@@ -73,59 +33,95 @@ export const CoffeeCardContainer = styled.article`
     line-height: 130%;
     // margin-bottom: 33px;
   }
+`
 
-  .coffee-buy {
+export const CoffeeCardImage = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 120px;
+  height: 120px;
+  margin-top: -20px;
+
+  img {
     width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 33px;
+    height: 100%;
+  }
+`
+
+export const CoffeeCardTags = styled.div`
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 4px;
+
+  margin-top: 12px;
+  margin-bottom: 16px;
+
+  span {
     display: flex;
+    padding: 4px 8px;
+    justify-content: center;
+    align-items: center;
+    background-color: ${(props) => props.theme['yellow-light']};
 
-    .price {
-      color: ${(props) => props.theme['base-text']};
-      text-align: right;
-      font-family: 'Roboto', sans-serif;
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 130%;
+    color: ${(props) => props.theme['yellow-dark']};
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 130%;
+    text-transform: uppercase;
+  }
+`
 
-      span {
-        font-family: 'Baloo 2', sans-serif;
-        font-size: 24px;
-        font-weight: 800;
-      }
+export const CoffeeCardCheckout = styled.div`
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 33px;
+  display: flex;
+
+  .coffee-card-price {
+    color: ${(props) => props.theme['base-text']};
+    text-align: right;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+
+    span {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
     }
+  }
 
-    .counter {
-      display: flex;
-      height: 38px;
-      padding: 8px;
-      justify-content: center;
-      align-items: center;
-      gap: 4px;
-      border-radius: 6px;
-      background: ${(props) => props.theme['base-button']};
+  .coffee-card-actions {
+    display: flex;
+    align-items: center;
 
-      button {
-        background-color: transparent;
-        border: none;
-        color: ${(props) => props.theme['purple-medium']};
-        width: 14px;
-        height: 14px;
-        font-size: 14px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+    gap: 8px;
+  }
 
-      span {
-        color: ${(props) => props.theme['base-title']};
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 130%;
-      }
+  .coffee-card-add-to-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+
+    background-color: ${(props) => props.theme['purple-dark']};
+    color: ${(props) => props.theme['base-card']};
+
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: ${(props) => props.theme['purple-medium']};
     }
   }
 `
