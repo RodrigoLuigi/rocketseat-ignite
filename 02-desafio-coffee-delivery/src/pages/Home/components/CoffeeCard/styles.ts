@@ -31,7 +31,6 @@ export const CoffeeCardContainer = styled.article`
     font-size: 14px;
     font-weight: 400;
     line-height: 130%;
-    // margin-bottom: 33px;
   }
 `
 
@@ -63,9 +62,11 @@ export const CoffeeCardTags = styled.div`
 
   span {
     display: flex;
-    padding: 4px 8px;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+
+    padding: 4px 8px;
+    border-radius: 100px;
     background-color: ${(props) => props.theme['yellow-light']};
 
     color: ${(props) => props.theme['yellow-dark']};
