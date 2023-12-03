@@ -1,8 +1,16 @@
 import styled from 'styled-components'
+interface HeaderContainerProps {
+  $isScrolled: boolean
+}
 
-export const HeaderContainer = styled.header`
+export const HeaderContainer = styled.header<HeaderContainerProps>`
   grid-area: header;
-  width: 100%;
+  width: min(100%, 90rem);
+
+  background-color: ${({ $isScrolled, theme }) =>
+    $isScrolled ? theme['base-background'] : 'transparent'};
+
+  position: fixed;
 `
 
 export const Content = styled.div`

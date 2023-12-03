@@ -5,7 +5,6 @@ import styled from 'styled-components'
 export const HomeContainer = styled.main`
   grid-area: content;
   width: 100%;
-  padding-bottom: 10rem;
 
   background-image: url('${backgroundBanner}');
   background-position: top;
@@ -15,7 +14,7 @@ export const HomeContainer = styled.main`
 export const Content = styled.div`
   max-width: 74rem;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 6.75rem 2rem;
 `
 
 export const SectionCoffee = styled.section`
