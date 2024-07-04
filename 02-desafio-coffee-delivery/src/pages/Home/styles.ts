@@ -7,7 +7,7 @@ export const HomeContainer = styled.main`
   width: 100%;
 
   background-image: url('${backgroundBanner}');
-  background-position: top;
+  background-position: center 100px;
   background-repeat: no-repeat;
 `
 
