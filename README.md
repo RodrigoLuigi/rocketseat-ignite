@@ -1,6 +1,6 @@
 # <div align="center" ><img src="02-ignite-timer/src/assets/logo-ignite.svg" align="center" /> Ignite - RocketSeat</div>
 
-### 📌 Aqui você encontrará todos os projetos e exercícios que estou desenvolvendo ao longo da minha jornada no curso des especialização Ignite da RocketSeat, bem como outros projetos de estudo que faço ao longo da jornada.
+### 📌 Aqui você encontrará todos os projetos e exercícios que estou desenvolvendo ao longo da minha jornada no curso de especialização do Ignite da RocketSeat, bem como outros projetos de estudo que faço ao longo da jornada.
 
 # <br>:book: Módulos do Ignite
 
